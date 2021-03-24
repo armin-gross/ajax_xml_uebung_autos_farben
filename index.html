@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+
+<h1>Autos</h1>
+
+<button type="button" onclick="loadDoc()">Klick mich</button>
+<br><br>
+<table id="farben"></table>
+<table id="autos"></table>
+
+<script>
+function loadDoc() {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "auto.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  let i;
+  let a;
+  let xmlDoc = xml.responseXML;
+
+  let tabelleFarben ="<tr><th>Farben</th></tr>"
+  let tabelleAutos ="<tr><th>Hersteller</th><th>Typ</th><th>Hubraum</th><th>Krafstoff</th></tr>";
+
+  let farben = xmlDoc.getElementsByTagName("farben");
+  let autos = xmlDoc.getElementsByTagName("modell");
+
+  for (a = 0; a < farben.length; a++) {
+    tabelleAutos += "<tr><td>" +
+    autos[i].getElementsByTagName("farbe")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+
+  for (i = 0; i < autos.length; i++) {
+    tabelleAutos += "<tr><td>" +
+    autos[i].getElementsByTagName("hersteller")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    autos[i].getElementsByTagName("typ")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    autos[i].getElementsByTagName("hubraum")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    autos[i].getAttribute("kraftstoff") +
+    "</td></tr>";
+  }
+  document.getElementById("farben").innerHTML = tabelleFarben;
+  document.getElementById("autos").innerHTML = tabelleAutos;
+}
+</script>
+
+</body>
+</html>

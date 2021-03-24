@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autos>
+	<farben>
+		<farbe>rot</farbe>
+		<modell kraftstoff="Gas">
+			<hersteller>Fiat</hersteller>
+			<typ>500</typ>
+			<hubraum>1000</hubraum>
+		</modell>
+	</farben>
+	<farben>
+		<farbe>blau</farbe>
+		<modell kraftstoff="Benzin">
+			<hersteller>Audi</hersteller>
+			<typ>TT</typ>
+			<hubraum>1800</hubraum>
+		</modell>
+		<modell kraftstoff="Diesel">
+			<hersteller>VW</hersteller>
+			<typ>Golf</typ>
+			<hubraum>1600</hubraum>
+		</modell>
+		<modell kraftstoff="Diesel">
+			<hersteller>Alfa Romeo</hersteller>
+			<typ>159</typ>
+			<hubraum>2000</hubraum>
+		</modell>
+	</farben>
+	<farben>
+		<farbe>schwarz</farbe>
+		<modell kraftstoff="Benzin">
+			<hersteller>Lancia</hersteller>
+			<typ>Ypsilon</typ>
+			<hubraum>1200</hubraum>
+		</modell>
+		<modell kraftstoff="Benzin">
+			<hersteller>Ferrari</hersteller>
+			<typ>355</typ>
+			<hubraum>3000</hubraum>
+		</modell>
+		<modell kraftstoff="Hybrid">
+			<hersteller>Toyota</hersteller>
+			<typ>Prius</typ>
+			<hubraum>1800</hubraum>
+		</modell>
+	</farben>
+	<farben>
+		<farbe>grün</farbe>
+		<modell kraftstoff="Benzin">
+			<hersteller>Lancia</hersteller>
+			<typ>Ypsilon</typ>
+			<hubraum>1200</hubraum>
+		</modell>
+		<modell kraftstoff="Benzin">
+			<hersteller>Ferrari</hersteller>
+			<typ>355</typ>
+			<hubraum>3000</hubraum>
+		</modell>
+		<modell kraftstoff="Hybrid">
+			<hersteller>Huansohn</hersteller>
+			<typ>Prius</typ>
+			<hubraum>1800</hubraum>
+		</modell>
+	</farben>
+</autos>

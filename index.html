@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Autos</h1>
+
+    <script>
+
+    function erstelleButtons(){
+      let welcheFarbe = [];
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let xmlDoc = this.responseXML;
+          let farbe = xmlDoc.getElementsByTagName("farben");
+          console.log(farbe.length);
+          for (let i = 0; i < farbe.length; i++) {
+            welcheFarbe[i] = i;
+
+            let farbeNamen = farbe[i].getElementsByTagName("farbe");
+
+            farben_bt = document.createElement("button");
+            farben_bt.setAttribute('id', 'farben_bt'+i);
+            farben_bt.textContent = farbeNamen[0].childNodes[0].nodeValue;
+
+            autosAusgabe = document.createElement("label");
+            autosAusgabe.setAttribute('id', 'farbe'+i);
+
+            absatz = document.createElement("br");
+
+            document.getElementsByTagName('body')[0].appendChild(farben_bt);
+            document.getElementsByTagName('body')[0].appendChild(autosAusgabe);
+            document.getElementsByTagName('body')[0].appendChild(absatz);
+          }
+          for (let a = 0; a < farbe.length; a++) {
+            document.getElementById("farben_bt"+a).onclick = function(){loadXmlFile(welcheFarbe[a])};
+          }
+
+    }
+  };
+  xhttp.open("GET", "auto.xml", true);
+  xhttp.send();
+}
+
+erstelleButtons();
+
+
+    function loadXmlFile(zahl){
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let ausgabe = "";
+          let xmlDoc = this.responseXML;
+          let farbe = xmlDoc.getElementsByTagName("farben");
+          let hersteller = farbe[zahl].getElementsByTagName("hersteller");
+              for (let i = 0; i < hersteller.length; i++) {
+                ausgabe += hersteller[i].childNodes[0].nodeValue+" ";
+              }
+              document.getElementById("farbe"+zahl).innerHTML = ausgabe+" ";
+        }
+      };
+      xhttp.open("GET", "auto.xml", true);
+      xhttp.send();
+    }
+
+    </script>
+
+  </body>
+</html>

@@ -62,4 +62,12 @@
 			<hubraum>1800</hubraum>
 		</modell>
 	</farben>
+	<farben>
+		<farbe>orange</farbe>
+		<modell kraftstoff="seppen">
+			<hersteller>karl</hersteller>
+			<typ>lauterbach</typ>
+			<hubraum>35</hubraum>
+		</modell>
+	</farben>
 </autos>
